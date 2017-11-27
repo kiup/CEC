@@ -27,9 +27,6 @@
         </activity>
         -->
         <activity
-            android:name=".listComputerCenter.ComputerCenterActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".login.LoginActivity"
             android:label="@string/title_activity_login">
             <intent-filter>
@@ -39,9 +36,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".listComputerCenter.ComputerCenterActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".computerCenterDetail.ComputerCenterDetailActivity"
             android:label="@string/title_activity_computer_center_detail"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity
             android:name=".computerDetail.ComputerDetailActivity"
             android:label="@string/title_activity_computer_detail"
