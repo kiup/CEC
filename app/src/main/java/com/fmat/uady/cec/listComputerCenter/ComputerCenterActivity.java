@@ -21,6 +21,7 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
     private RecyclerView recyclerView;
     private ComputerCenterAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,7 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayShowTitleEnabled(true);
+
 
 
         recyclerView = (RecyclerView) findViewById(R.id.list);
@@ -40,7 +42,7 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
         //inicializa el adapter con los datos que se crearan
 
         ComputerData datos = new ComputerData();
-        adapter = new ComputerCenterAdapter(datos.getComputerCenters());
+        adapter = new ComputerCenterAdapter(datos.getComputerCenters(), getApplicationContext());
 
         recyclerView.setAdapter(adapter);
 
