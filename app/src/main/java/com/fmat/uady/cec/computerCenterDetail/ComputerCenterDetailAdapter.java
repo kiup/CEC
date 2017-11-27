@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fmat.uady.cec.R;
+import com.fmat.uady.cec.computerDetail.ComputerDetailActivity;
 import com.fmat.uady.cec.model.Computer;
 import com.fmat.uady.cec.model.ComputerCenter;
 
@@ -22,7 +23,8 @@ import java.util.ArrayList;
 
 public class ComputerCenterDetailAdapter extends RecyclerView.Adapter<ComputerCenterDetailAdapter.ComputerViewHolder> {
     private ArrayList<Computer> computers;
-    public static String NAME_COMPUTER = "com.fmat.uady.cec.computerCenter.nameComputer";
+    public static String NAME_COMPUTER = "com.fmat.uady.cec.computer.nameComputer";
+    public static String NAME_CENTER = "com.fmat.uady.cec.computer.nameCenter";
     private Context context;
 
     public ComputerCenterDetailAdapter(ArrayList<Computer> computers, Context context) {
@@ -39,15 +41,16 @@ public class ComputerCenterDetailAdapter extends RecyclerView.Adapter<ComputerCe
     @Override
     public void onBindViewHolder(ComputerViewHolder holder, final int position) {
         holder.name.setText(computers.get(position).getNameComputer());
-       /* holder.center.setOnClickListener(new View.OnClickListener() {
+        holder.computer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent computerCenterDetail = new Intent(context, ComputerCenterDetailActivity.class);
-                computerCenterDetail.putExtra(NAME_CENTER, computers.get(position).getName() );
-                computerCenterDetail.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(computerCenterDetail);
+                Intent computerDetail = new Intent(context, ComputerDetailActivity.class);
+                computerDetail.putExtra(NAME_COMPUTER, computers.get(position).getNameComputer());
+                computerDetail.putExtra(NAME_CENTER, computers.get(position).getIdComputerCenter());
+                computerDetail.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(computerDetail);
             }
-        });*/
+        });
 
     }
 

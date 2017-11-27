@@ -20,4 +20,11 @@
     <string name="title_activity_computer_center_detail">ComputerCenterDetailActivity</string>
     <string name="title_activity_computer_detail">ComputerDetailActivity</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="text_id_computer">ID:</string>
+    <string name="text_id_computer_example">M9</string>
+    <string name="text_id_center">ID CENTRO:</string>
+    <string name="text_id_center_example">CC9</string>
+    <string name="text_MACADDRESS">MACADDRESS:</string>
+    <string name="text_MACADDRESS_example">FF:FF:FF:FF:FF:FF</string>
+
 </resources>

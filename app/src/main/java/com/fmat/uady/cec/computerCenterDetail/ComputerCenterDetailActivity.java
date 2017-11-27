@@ -21,6 +21,8 @@ public class ComputerCenterDetailActivity extends AppCompatActivity {
     private String nameCenter ;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

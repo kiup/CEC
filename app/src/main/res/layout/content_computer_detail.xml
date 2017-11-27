@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/image_computer"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:contentDescription="computer"
+        android:src="@drawable/ic_computer_black_24dp" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/text_id_computer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="80dp"
+        android:layout_below="@+id/image_computer"
+        android:text="@string/text_id_computer" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/id_computer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_computer"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="29dp"
+        android:layout_toEndOf="@+id/text_macaddress"
+        android:text="@string/text_id_computer_example" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/text_id_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_below="@+id/image_computer"
+        android:text="@string/text_id_center" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/id_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_computer"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="29dp"
+        android:layout_toEndOf="@+id/text_macaddress"
+        android:text="@string/text_id_center_example" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/text_macaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="80dp"
+        android:layout_below="@+id/image_computer"
+        android:text="@string/text_MACADDRESS" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/macaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_computer"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="29dp"
+        android:layout_toEndOf="@+id/text_macaddress"
+        android:text="@string/text_MACADDRESS_example" />
+
+    <ImageView
+        android:id="@+id/button_power"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="360dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:contentDescription="button power"
+        android:src="@mipmap/ic_off" />
+
+</RelativeLayout>
