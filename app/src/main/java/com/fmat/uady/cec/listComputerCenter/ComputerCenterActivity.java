@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -54,6 +55,11 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_computer_center, menu);
 
+        MenuItem search = menu.findItem(R.id.action_search);
+
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(search);
+        searchView.setOnQueryTextListener(this);
+
         return true;
     }
 
@@ -74,6 +80,7 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
 
     @Override
     public boolean onQueryTextChange(String newText) {
-        return false;
+        adapter.getFilter().filter(newText);
+        return true;
     }
 }
