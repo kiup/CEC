@@ -24,7 +24,6 @@
         android:layout_gravity="center"
         android:textAlignment="center"
         android:paddingTop="10dp"
-        android:text="CC1"
         android:textSize="22sp"
         android:textStyle="bold"
         android:fontFamily="sans-serif"/>
