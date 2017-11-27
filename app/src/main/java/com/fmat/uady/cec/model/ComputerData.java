@@ -14,27 +14,46 @@ public class ComputerData {
     public ComputerData() {
         computers = new ArrayList<>();
         computerCenters = new ArrayList<>();
+        initComputerCenter();
+        initComputers();
     }
 
-    public ArrayList<Computer> getComputers(){
+    public void initComputers(){
         computers.add(new Computer("CC1", "A1", "FG:12:34:45:12", "",false));
         computers.add(new Computer("CC1", "A2", "FG:12:34:45:12", "",false));
         computers.add(new Computer("CC1", "A3", "FG:12:34:45:12", "",false));
         computers.add(new Computer("CC1", "A4", "FG:12:34:45:12", "",true));
         computers.add(new Computer("CC1", "A5", "FG:12:34:45:12", "",false));
-        computers.add(new Computer("CC1", "A6", "FG:12:34:45:12", "",true));
-        computers.add(new Computer("CC1", "A7", "FG:12:34:45:12", "",false));
-        computers.add(new Computer("CC1", "A8", "FG:12:34:45:12", "",false));
-        return computers;
+        computers.add(new Computer("CC1", "B1", "FG:12:34:45:12", "",true));
+        computers.add(new Computer("CC1", "B2", "FG:12:34:45:12", "",false));
+        computers.add(new Computer("CC1", "B3", "FG:12:34:45:12", "",false));
     }
 
-    public ArrayList<ComputerCenter> getComputerCenters() {
+    public void initComputerCenter(){
         computerCenters.add(new ComputerCenter("CC1"));
         computerCenters.add(new ComputerCenter("CC2"));
         computerCenters.add(new ComputerCenter("CC3"));
         computerCenters.add(new ComputerCenter("CC4"));
         computerCenters.add(new ComputerCenter("CC5"));
         computerCenters.add(new ComputerCenter("CC6"));
+    }
+
+    public ArrayList<Computer> getComputers(){
+        return computers;
+    }
+
+    public ArrayList<ComputerCenter> getComputerCenters() {
         return computerCenters;
+    }
+
+    public ArrayList<Computer> getComputersByCenter(String center){
+        ArrayList<Computer> filteredComputers = new ArrayList<>();
+        for(Computer computer : computers){
+            if(computer.getIdComputerCenter().equals(center)){
+                filteredComputers.add(computer);
+            }
+        }
+
+        return filteredComputers;
     }
 }
