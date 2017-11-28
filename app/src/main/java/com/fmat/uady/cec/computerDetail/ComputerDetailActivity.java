@@ -41,7 +41,7 @@ public class ComputerDetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_computer_center_detail);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle(getIntent().getStringExtra(nameComputer));
+        getSupportActionBar().setTitle(nameComputer);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //Data
@@ -53,7 +53,7 @@ public class ComputerDetailActivity extends AppCompatActivity {
 
     private void loadData() {
         this.tcomputer = (TextView) findViewById(R.id.id_computer);
-        tcomputer.setText(computerCurrent.getIdComputerCenter());
+        tcomputer.setText(computerCurrent.getNameComputer());
         this.tcenter = (TextView) findViewById(R.id.id_center);
         tcenter.setText(computerCurrent.getIdComputerCenter());
         this.tmacaddress = (TextView) findViewById(R.id.macaddress);
@@ -78,11 +78,11 @@ public class ComputerDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(computerCurrent.isState()){
-                    Toast.makeText(ComputerDetailActivity.this,"APAGATE SESAMO!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(ComputerDetailActivity.this,"APAGATE SESAMO!",Toast.LENGTH_SHORT).show();
                     computerCurrent.setState(false);
                     buttonPower.setImageResource(R.mipmap.ic_off);
                 }else{
-                    Toast.makeText(ComputerDetailActivity.this,"LEVANTATE!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(ComputerDetailActivity.this,"LEVANTATE!",Toast.LENGTH_SHORT).show();
                     computerCurrent.setState(true);
                     buttonPower.setImageResource(R.mipmap.ic_on);
                 }
