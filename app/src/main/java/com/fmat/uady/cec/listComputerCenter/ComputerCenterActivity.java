@@ -44,10 +44,14 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
 
         ComputerData datos = new ComputerData();
         adapter = new ComputerCenterAdapter(datos.getComputerCenters(), getApplicationContext());
+        checkComputersOn();
 
         recyclerView.setAdapter(adapter);
 
 
+    }
+
+    private void checkComputersOn() {
     }
 
     @Override
