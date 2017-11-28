@@ -6,9 +6,19 @@ package com.fmat.uady.cec.model;
 
 public class ComputerCenter {
     private String name;
+    private Boolean isOn;
 
     public ComputerCenter(String name) {
         this.name = name;
+        this.isOn = false;
+    }
+
+    public Boolean getOn() {
+        return isOn;
+    }
+
+    public void setOn(Boolean on) {
+        isOn = on;
     }
 
     public String getName() {

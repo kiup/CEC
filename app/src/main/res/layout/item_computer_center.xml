@@ -11,7 +11,7 @@
         android:id="@+id/image_center"
         android:layout_width="80dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_computer_black_24dp"
+        android:src="@mipmap/ic_group_off"
         android:layout_gravity="start"
         android:layout_marginLeft="15dp"
         android:contentDescription="computer"
@@ -24,7 +24,6 @@
         android:layout_gravity="center"
         android:textAlignment="center"
         android:paddingTop="10dp"
-        android:text="CC1"
         android:textSize="22sp"
         android:textStyle="bold"
         android:fontFamily="sans-serif"/>
