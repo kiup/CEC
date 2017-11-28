@@ -9,17 +9,17 @@ public class Computer {
     private String nameComputer;
     private String macAddress;
     private String ip;
-    private boolean state;     //true:encendido false:apagado
+    private boolean isOn;     //true:encendido false:apagado
 
     public Computer() {
     }
 
-    public Computer(String idComputerCenter, String nameComputer, String macAddress, String ip, boolean state) {
+    public Computer(String idComputerCenter, String nameComputer, String macAddress, String ip, boolean isOn) {
         this.idComputerCenter = idComputerCenter;
         this.nameComputer = nameComputer;
         this.macAddress = macAddress;
         this.ip = ip;
-        this.state = state;
+        this.isOn = isOn;
     }
 
     public String getIdComputerCenter() {
@@ -54,11 +54,11 @@ public class Computer {
         this.ip = ip;
     }
 
-    public boolean isState() {
-        return state;
+    public boolean isOn() {
+        return isOn;
     }
 
-    public void setState(boolean state) {
-        this.state = state;
+    public void setOn(boolean on) {
+        this.isOn = on;
     }
 }

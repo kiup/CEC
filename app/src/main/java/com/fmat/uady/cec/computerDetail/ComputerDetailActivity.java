@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.TextureView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,7 +11,6 @@ import android.widget.Toast;
 
 import com.fmat.uady.cec.R;
 import com.fmat.uady.cec.computerCenterDetail.ComputerCenterDetailAdapter;
-import com.fmat.uady.cec.listComputerCenter.ComputerCenterAdapter;
 import com.fmat.uady.cec.model.Computer;
 import com.fmat.uady.cec.model.ComputerData;
 
@@ -71,19 +69,19 @@ public class ComputerDetailActivity extends AppCompatActivity {
     }
 
     public void loadButtons(){
-        if(computerCurrent.isState()){
+        if(computerCurrent.isOn()){
             buttonPower.setImageResource(R.mipmap.ic_on);
         }
         buttonPower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(computerCurrent.isState()){
+                if(computerCurrent.isOn()){
                     Toast.makeText(ComputerDetailActivity.this,"APAGATE SESAMO!",Toast.LENGTH_SHORT).show();
-                    computerCurrent.setState(false);
+                    computerCurrent.setOn(false);
                     buttonPower.setImageResource(R.mipmap.ic_off);
                 }else{
                     Toast.makeText(ComputerDetailActivity.this,"LEVANTATE!",Toast.LENGTH_SHORT).show();
-                    computerCurrent.setState(true);
+                    computerCurrent.setOn(true);
                     buttonPower.setImageResource(R.mipmap.ic_on);
                 }
 

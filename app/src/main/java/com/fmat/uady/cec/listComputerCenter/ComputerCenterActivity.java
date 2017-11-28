@@ -16,11 +16,16 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.fmat.uady.cec.R;
+import com.fmat.uady.cec.model.Computer;
+import com.fmat.uady.cec.model.ComputerCenter;
 import com.fmat.uady.cec.model.ComputerData;
+
+import java.util.ArrayList;
 
 public class ComputerCenterActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
     private RecyclerView recyclerView;
     private ComputerCenterAdapter adapter;
+    private ArrayList<ComputerCenter> computerCenters;
 
 
     @Override
@@ -42,9 +47,10 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
 
         //inicializa el adapter con los datos que se crearan
 
-        ComputerData datos = new ComputerData();
-        adapter = new ComputerCenterAdapter(datos.getComputerCenters(), getApplicationContext());
+
         checkComputersOn();
+        adapter = new ComputerCenterAdapter(computerCenters, getApplicationContext());
+
 
         recyclerView.setAdapter(adapter);
 
@@ -52,6 +58,18 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
     }
 
     private void checkComputersOn() {
+        ComputerData datos = new ComputerData();
+
+        computerCenters = datos.getComputerCenters();
+        for(ComputerCenter computerCenter :computerCenters ){
+            ArrayList<Computer> computers = datos.getComputersByCenter(computerCenter.getName());
+            for (Computer computer : computers ){
+                if(computer.isOn()){
+                    computerCenter.setOn(true);
+                    break;
+                }
+            }
+        }
     }
 
     @Override
