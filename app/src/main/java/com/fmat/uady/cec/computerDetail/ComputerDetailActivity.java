@@ -10,10 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fmat.uady.cec.R;
-import com.fmat.uady.cec.service.WakeOnLan;
 import com.fmat.uady.cec.computerCenterDetail.ComputerCenterDetailAdapter;
 import com.fmat.uady.cec.model.Computer;
 import com.fmat.uady.cec.model.ComputerData;
+import com.fmat.uady.cec.service.Service;
 
 import java.util.List;
 
@@ -26,10 +26,13 @@ public class ComputerDetailActivity extends AppCompatActivity {
     private TextView tcomputer;
     private TextView tmacaddress;
     private TextView tcenter;
+    private Service service;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        this.service = new Service(this);
         setContentView(R.layout.activity_computer_detail);
         computerCurrent = new Computer();
 
@@ -77,11 +80,11 @@ public class ComputerDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(computerCurrent.isOn()){
-                    Toast.makeText(ComputerDetailActivity.this,"APAGATE SESAMO!",Toast.LENGTH_SHORT).show();
+                    ComputerDetailActivity.this.service.turnOff(computerCurrent.getNameComputer());
                     computerCurrent.setOn(false);
                     buttonPower.setImageResource(R.mipmap.ic_off);
                 }else{
-                    Toast.makeText(ComputerDetailActivity.this,"LEVANTATE!",Toast.LENGTH_SHORT).show();
+                    ComputerDetailActivity.this.service.turnOn(computerCurrent.getNameComputer());
                     computerCurrent.setOn(true);
                     buttonPower.setImageResource(R.mipmap.ic_on);
                 }
