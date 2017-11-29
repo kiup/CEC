@@ -3,6 +3,7 @@ package com.fmat.uady.cec.persistence.dao;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
@@ -16,16 +17,19 @@ import java.util.List;
 @Dao
 public interface ComputerCenterDao {
 
-    @Query("SELECT * FROM computer_center")
+    @Query("SELECT * FROM computer_centers")
     List<ComputerCenter> getAll();
 
-    @Query("SELECT * FROM computer_center WHERE name LIKE :nameCenter")
+    @Query("SELECT * FROM computer_centers WHERE name LIKE :nameCenter")
     List<ComputerCenter> findByName(String nameCenter);
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(ComputerCenter computerCenter);
 
-    @Update
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertComputerCenters(List<ComputerCenter> computerCenters);
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
     void update(ComputerCenter computerCenter);
 
     @Delete

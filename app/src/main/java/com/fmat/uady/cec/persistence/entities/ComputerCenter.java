@@ -8,7 +8,7 @@ import android.support.annotation.NonNull;
 /**
  * Created by noecutz on 25/11/17.
  */
-@Entity(tableName = "computer_center")
+@Entity(tableName = "computer_centers")
 public class ComputerCenter {
 
     @PrimaryKey
@@ -16,20 +16,20 @@ public class ComputerCenter {
     @NonNull
     private String name;
 
-    @ColumnInfo(name = "is_on")
-    private Boolean isOn;
+    @ColumnInfo(name = "is_turnOn")
+    private Boolean isTurnOn;
 
     public ComputerCenter(String name) {
         this.name = name;
-        this.isOn = false;
+        this.isTurnOn = false;
     }
 
-    public Boolean getOn() {
-        return isOn;
+    public Boolean isTurnOn() {
+        return isTurnOn;
     }
 
-    public void setOn(Boolean on) {
-        isOn = on;
+    public void setTurnOn(Boolean isTurnOn) {
+        this.isTurnOn = isTurnOn;
     }
 
     public String getName() {

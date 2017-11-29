@@ -4,13 +4,12 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.Ignore;
-import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 /**
  * Created by noecutz on 25/11/17.
  */
-@Entity(tableName = "computer", primaryKeys = {"id_computer_center", "name_computer"},
+@Entity(tableName = "computers", primaryKeys = {"id_computer_center", "name_computer"},
         foreignKeys = @ForeignKey(entity = ComputerCenter.class, parentColumns = "name", childColumns = "id_computer_center"))
 public class Computer {
 
@@ -27,20 +26,20 @@ public class Computer {
     @ColumnInfo(name = "ip")
     private String ip;
 
-    @ColumnInfo(name = "is_on")
-    private boolean isOn;     //true:encendido false:apagado
+    @ColumnInfo(name = "is_turnOn")
+    private boolean isTurnOn;     //true:encendido false:apagado
 
     public Computer() {
 
     }
 
     @Ignore
-    public Computer(String idComputerCenter, String nameComputer, String macAddress, String ip, boolean isOn) {
+    public Computer(String idComputerCenter, String nameComputer, String macAddress, String ip, boolean isTurnOn) {
         this.idComputerCenter = idComputerCenter;
         this.nameComputer = nameComputer;
         this.macAddress = macAddress;
         this.ip = ip;
-        this.isOn = isOn;
+        this.isTurnOn = isTurnOn;
     }
 
     public String getIdComputerCenter() {
@@ -75,11 +74,11 @@ public class Computer {
         this.ip = ip;
     }
 
-    public boolean isOn() {
-        return isOn;
+    public boolean isTurnOn() {
+        return isTurnOn;
     }
 
-    public void setOn(boolean on) {
-        this.isOn = on;
+    public void setTurnOn(boolean turnOn) {
+        this.isTurnOn = turnOn;
     }
 }
