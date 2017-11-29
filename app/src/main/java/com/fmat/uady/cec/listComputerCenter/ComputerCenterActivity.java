@@ -44,6 +44,7 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
         getSupportActionBar().setHomeButtonEnabled(true);
 
 
+
         navigationView = (NavigationView) findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(this);
 
