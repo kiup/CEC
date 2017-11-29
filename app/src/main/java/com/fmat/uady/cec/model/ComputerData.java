@@ -19,7 +19,7 @@ public class ComputerData {
     }
 
     public void initComputers(){
-        computers.add(new Computer("CC1", "A1", "FG:12:34:45:12", "",false));
+        computers.add(new Computer("CC1", "A1", "AC:D1:B8:EA:64:91", "192.168.228.120",false));
         computers.add(new Computer("CC1", "A2", "FG:12:34:45:12", "",false));
         computers.add(new Computer("CC1", "A3", "FG:12:34:45:12", "",false));
         computers.add(new Computer("CC1", "A4", "FG:12:34:45:12", "",true));

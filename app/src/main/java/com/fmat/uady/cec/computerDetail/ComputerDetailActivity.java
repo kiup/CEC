@@ -1,6 +1,7 @@
 package com.fmat.uady.cec.computerDetail;
 
 import android.os.Bundle;
+import android.support.v4.content.WakefulBroadcastReceiver;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fmat.uady.cec.R;
+import com.fmat.uady.cec.WakeOnLan.WakeOnLan;
 import com.fmat.uady.cec.computerCenterDetail.ComputerCenterDetailAdapter;
 import com.fmat.uady.cec.listComputerCenter.ComputerCenterAdapter;
 import com.fmat.uady.cec.model.Computer;
@@ -82,8 +84,9 @@ public class ComputerDetailActivity extends AppCompatActivity {
                     computerCurrent.setState(false);
                     buttonPower.setImageResource(R.mipmap.ic_off);
                 }else{
-                    Toast.makeText(ComputerDetailActivity.this,"LEVANTATE!",Toast.LENGTH_SHORT).show();
                     computerCurrent.setState(true);
+                    String message = WakeOnLan.wol(computerCurrent.getIp(), computerCurrent.getMacAddress());
+                    Toast.makeText(ComputerDetailActivity.this,message,Toast.LENGTH_LONG).show();
                     buttonPower.setImageResource(R.mipmap.ic_on);
                 }
 
