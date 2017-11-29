@@ -23,9 +23,15 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.fmat.uady.cec.R;
+import com.fmat.uady.cec.computerCenterDetail.ComputerCenterDetailActivity;
+import com.fmat.uady.cec.history.HistoryActivity;
 import com.fmat.uady.cec.model.Computer;
 import com.fmat.uady.cec.model.ComputerCenter;
 import com.fmat.uady.cec.model.ComputerData;
+<<<<<<< HEAD
+=======
+import com.fmat.uady.cec.model.History;
+>>>>>>> dev_mika
 import com.fmat.uady.cec.profile.ProfileActivity;
 
 import java.util.ArrayList;
@@ -137,14 +143,20 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
 
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
+        menuItem.setChecked(true);
+        drawerLayout.closeDrawers();
         switch (menuItem.getItemId()){
             case R.id.navigation_profil:
-                Toast.makeText(getApplicationContext(),"Perfil", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ComputerCenterActivity.this, ProfileActivity.class);
-                startActivity(intent);
+
+                Intent profile = new Intent(this, ProfileActivity.class);
+                profile.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                this.startActivity(profile);
+
                 break;
             case R.id.navigation_history:
-                Toast.makeText(getApplicationContext(),"Historial", Toast.LENGTH_SHORT).show();
+                Intent history = new Intent(this, HistoryActivity.class);
+                history.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                this.startActivity(history);
                 break;
         }
 

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fmat.uady.cec.R;
+import com.fmat.uady.cec.service.WakeOnLan;
 import com.fmat.uady.cec.computerCenterDetail.ComputerCenterDetailAdapter;
 import com.fmat.uady.cec.model.Computer;
 import com.fmat.uady.cec.model.ComputerData;

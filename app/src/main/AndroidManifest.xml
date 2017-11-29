@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -46,6 +47,10 @@
             android:name=".computerDetail.ComputerDetailActivity"
             android:label="@string/title_activity_computer_detail"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".history.HistoryActivity"
+            android:label="@string/title_activity_history"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".profile.ProfileActivity"
             android:label="@string/title_activity_profile"
