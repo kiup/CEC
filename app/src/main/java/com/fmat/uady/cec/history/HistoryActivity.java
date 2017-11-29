@@ -1,4 +1,4 @@
-package com.fmat.uady.cec.History;
+package com.fmat.uady.cec.history;
 
 import android.support.v7.app.AppCompatActivity;
 

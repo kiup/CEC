@@ -1,10 +1,8 @@
-package com.fmat.uady.cec.WakeOnLan;
+package com.fmat.uady.cec.service;
 
 /**
  * Created by M on 27/11/2017.
  */
-import android.content.Context;
-import android.widget.Toast;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;

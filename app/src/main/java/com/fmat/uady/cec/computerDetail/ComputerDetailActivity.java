@@ -1,20 +1,17 @@
 package com.fmat.uady.cec.computerDetail;
 
 import android.os.Bundle;
-import android.support.v4.content.WakefulBroadcastReceiver;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.TextureView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fmat.uady.cec.R;
-import com.fmat.uady.cec.WakeOnLan.WakeOnLan;
+import com.fmat.uady.cec.service.WakeOnLan;
 import com.fmat.uady.cec.computerCenterDetail.ComputerCenterDetailAdapter;
-import com.fmat.uady.cec.listComputerCenter.ComputerCenterAdapter;
 import com.fmat.uady.cec.model.Computer;
 import com.fmat.uady.cec.model.ComputerData;
 
