@@ -26,5 +26,6 @@
     <string name="text_id_center_example">CC9</string>
     <string name="text_MACADDRESS">MACADDRESS:</string>
     <string name="text_MACADDRESS_example">FF:FF:FF:FF:FF:FF</string>
+    <string name="title_activity_profile">Perfil</string>
 
 </resources>

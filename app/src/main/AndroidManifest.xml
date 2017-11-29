@@ -41,12 +41,14 @@
         <activity
             android:name=".computerCenterDetail.ComputerCenterDetailActivity"
             android:label="@string/title_activity_computer_center_detail"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".computerDetail.ComputerDetailActivity"
             android:label="@string/title_activity_computer_detail"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".profile.ProfileActivity"
+            android:label="@string/title_activity_profile"></activity>
     </application>
 
 </manifest>

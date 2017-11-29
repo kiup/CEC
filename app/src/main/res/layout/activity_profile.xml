@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_profile"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/profilePicture"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:layout_alignBottom="@+id/nameText"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="257dp"
+        android:fontFamily="Roboto"
+        android:text="John Doe"
+        android:textSize="80px"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/rolText"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/profilePicture"
+        android:layout_alignTop="@+id/nameText"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="Roboto"
+        android:text="Rol: Administrador"
+        android:textSize="80px"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="360dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/rolText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/turnOffText"
+                android:layout_width="180dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/turnOnText"
+                android:layout_alignBottom="@+id/turnOnText"
+                android:layout_toEndOf="@+id/turnOnText"
+                android:text="Apagó: 3 maquinas"
+                android:textSize="60px" />
+
+            <TextView
+                android:id="@+id/turnOnText"
+                android:layout_width="180dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="6dp"
+                android:text="Encedió: 3 maquinas"
+                android:textSize="60px" />
+
+            <TextView
+                android:id="@+id/hourText"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/dateText"
+                android:layout_alignBottom="@+id/dateText"
+                android:layout_alignParentEnd="true"
+                android:text="17:42"
+                android:textSize="60px" />
+
+            <TextView
+                android:id="@+id/centerText"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_alignStart="@+id/turnOnText"
+                android:layout_below="@+id/turnOnText"
+                android:text="Salón: CC1"
+                android:textSize="60px" />
+
+            <TextView
+                android:id="@+id/dateText"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_above="@+id/turnOnText"
+                android:layout_alignStart="@+id/turnOnText"
+                android:text="20/11/17"
+                android:textSize="60px" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
