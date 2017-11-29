@@ -38,14 +38,13 @@ public class HistoryActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-/*
+
         recyclerView = (RecyclerView) findViewById(R.id.list_history);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new HistoryAdapter(loadData());
         recyclerView.setAdapter(adapter);
-*/
 
     }
 

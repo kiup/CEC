@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.fmat.uady.cec.R;
 import com.fmat.uady.cec.computerCenterDetail.ComputerCenterDetailActivity;
+import com.fmat.uady.cec.history.HistoryActivity;
 import com.fmat.uady.cec.model.Computer;
 import com.fmat.uady.cec.model.ComputerCenter;
 import com.fmat.uady.cec.model.ComputerData;
@@ -148,7 +149,7 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
                 this.startActivity(profile);
                 break;
             case R.id.navigation_history:
-                Intent history = new Intent(this, History.class);
+                Intent history = new Intent(this, HistoryActivity.class);
                 history.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 this.startActivity(history);
                 break;
