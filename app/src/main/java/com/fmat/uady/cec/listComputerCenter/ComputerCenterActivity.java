@@ -2,6 +2,7 @@ package com.fmat.uady.cec.listComputerCenter;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -25,6 +26,7 @@ import com.fmat.uady.cec.R;
 import com.fmat.uady.cec.model.Computer;
 import com.fmat.uady.cec.model.ComputerCenter;
 import com.fmat.uady.cec.model.ComputerData;
+import com.fmat.uady.cec.profile.ProfileActivity;
 
 import java.util.ArrayList;
 
@@ -138,6 +140,8 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
         switch (menuItem.getItemId()){
             case R.id.navigation_profil:
                 Toast.makeText(getApplicationContext(),"Perfil", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ComputerCenterActivity.this, ProfileActivity.class);
+                startActivity(intent);
                 break;
             case R.id.navigation_history:
                 Toast.makeText(getApplicationContext(),"Historial", Toast.LENGTH_SHORT).show();
