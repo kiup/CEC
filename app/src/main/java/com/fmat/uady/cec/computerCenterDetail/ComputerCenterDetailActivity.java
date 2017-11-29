@@ -1,7 +1,6 @@
 package com.fmat.uady.cec.computerCenterDetail;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,10 +9,11 @@ import android.view.MenuItem;
 
 import com.fmat.uady.cec.R;
 import com.fmat.uady.cec.listComputerCenter.ComputerCenterAdapter;
-import com.fmat.uady.cec.model.Computer;
-import com.fmat.uady.cec.model.ComputerData;
+import com.fmat.uady.cec.persistence.database.AppData;
+import com.fmat.uady.cec.persistence.entities.Computer;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ComputerCenterDetailActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
@@ -44,9 +44,9 @@ public class ComputerCenterDetailActivity extends AppCompatActivity {
         GridLayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 5);
         recyclerView.setLayoutManager(layoutManager);
 
-        ComputerData datos = new ComputerData();
 
-        ArrayList<Computer> computers = datos.getComputersByCenter(nameCenter);
+        List<Computer> computers = AppData.getAppData(getApplicationContext()).
+                computerDao().findByCenter(nameCenter);
 
         adapter = new ComputerCenterDetailAdapter(computers, getApplicationContext());
 

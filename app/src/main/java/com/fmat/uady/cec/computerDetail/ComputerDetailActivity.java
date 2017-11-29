@@ -11,8 +11,9 @@ import android.widget.Toast;
 
 import com.fmat.uady.cec.R;
 import com.fmat.uady.cec.computerCenterDetail.ComputerCenterDetailAdapter;
-import com.fmat.uady.cec.model.Computer;
-import com.fmat.uady.cec.model.ComputerData;
+import com.fmat.uady.cec.persistence.database.AppData;
+import com.fmat.uady.cec.persistence.entities.Computer;
+import com.fmat.uady.cec.persistence.database.DataInitializer;
 
 import java.util.List;
 
@@ -59,29 +60,25 @@ public class ComputerDetailActivity extends AppCompatActivity {
     }
 
     public void getComputer(){
-        ComputerData datos = new ComputerData();
-        List<Computer> computers = datos.getComputersByCenter(nameCenter);
-        for (Computer icomputer: computers){
-            if (icomputer.getNameComputer().equals(nameComputer)){
-                computerCurrent = icomputer;
-            }
-        }
+        computerCurrent = AppData.getAppData(getApplicationContext()).
+                computerDao().findByName(nameComputer);
+
     }
 
     public void loadButtons(){
-        if(computerCurrent.isOn()){
+        if(computerCurrent.isTurnOn()){
             buttonPower.setImageResource(R.mipmap.ic_on);
         }
         buttonPower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(computerCurrent.isOn()){
+                if(computerCurrent.isTurnOn()){
                     Toast.makeText(ComputerDetailActivity.this,"APAGATE SESAMO!",Toast.LENGTH_SHORT).show();
-                    computerCurrent.setOn(false);
+                    computerCurrent.setTurnOn(false);
                     buttonPower.setImageResource(R.mipmap.ic_off);
                 }else{
                     Toast.makeText(ComputerDetailActivity.this,"LEVANTATE!",Toast.LENGTH_SHORT).show();
-                    computerCurrent.setOn(true);
+                    computerCurrent.setTurnOn(true);
                     buttonPower.setImageResource(R.mipmap.ic_on);
                 }
 

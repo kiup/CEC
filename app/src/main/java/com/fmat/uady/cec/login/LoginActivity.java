@@ -32,6 +32,10 @@ import android.widget.TextView;
 
 import com.fmat.uady.cec.R;
 import com.fmat.uady.cec.listComputerCenter.ComputerCenterActivity;
+import com.fmat.uady.cec.persistence.database.AppData;
+import com.fmat.uady.cec.persistence.database.DataInitializer;
+import com.fmat.uady.cec.persistence.entities.ComputerCenter;
+import com.fmat.uady.cec.persistence.entities.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +70,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView;
     private View mLoginFormView;
 
+    private List<User> users ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +102,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        initData();
+    }
+
+    private void initData() {
+        DataInitializer initializer = new DataInitializer(getApplicationContext());
+        initializer.initData();
+
+        users = AppData.getAppData(getApplicationContext()).userDao().getAll();
     }
 
     private void populateAutoComplete() {
@@ -319,11 +334,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
+            for (User user : users) {
+                if (user.getEmail().equals(mEmail)) {
                     // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
+                    return user.getPassword().equals(mPassword);
                 }
             }
 

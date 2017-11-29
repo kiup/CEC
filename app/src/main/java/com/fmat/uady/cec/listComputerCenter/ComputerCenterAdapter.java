@@ -14,22 +14,22 @@ import android.widget.TextView;
 
 import com.fmat.uady.cec.R;
 import com.fmat.uady.cec.computerCenterDetail.ComputerCenterDetailActivity;
-import com.fmat.uady.cec.model.Computer;
-import com.fmat.uady.cec.model.ComputerCenter;
+import com.fmat.uady.cec.persistence.entities.ComputerCenter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by noecutz on 25/11/17.
  */
 
 public class ComputerCenterAdapter extends RecyclerView.Adapter<ComputerCenterAdapter.ComputerCenterViewHolder> implements Filterable{
-    private ArrayList<ComputerCenter> computerCenters;
-    private ArrayList<ComputerCenter> filteredComputerCenters;
+    private List<ComputerCenter> computerCenters;
+    private List<ComputerCenter> filteredComputerCenters;
     public static String NAME_CENTER = "com.fmat.uady.cec.computerCenter.nameCenter";
     private Context context;
 
-    public ComputerCenterAdapter(ArrayList<ComputerCenter> computerCenters, Context context) {
+    public ComputerCenterAdapter(List<ComputerCenter> computerCenters, Context context) {
         this.computerCenters = computerCenters;
         this.filteredComputerCenters = computerCenters;
         this.context = context;
@@ -45,7 +45,7 @@ public class ComputerCenterAdapter extends RecyclerView.Adapter<ComputerCenterAd
     public void onBindViewHolder(ComputerCenterViewHolder holder, final int position) {
         holder.name.setText(filteredComputerCenters.get(position).getName());
 
-        if(filteredComputerCenters.get(position).getOn()){
+        if(filteredComputerCenters.get(position).isTurnOn()){
             holder.image.setImageResource(R.mipmap.ic_group_on);
         }else{
             holder.image.setImageResource(R.mipmap.ic_group_off);
@@ -80,7 +80,7 @@ public class ComputerCenterAdapter extends RecyclerView.Adapter<ComputerCenterAd
                     filteredComputerCenters = computerCenters;
                 }else {
 
-                    ArrayList<ComputerCenter> filteredList = new ArrayList<>();
+                    List<ComputerCenter> filteredList = new ArrayList<>();
                     for(ComputerCenter computerCenter : computerCenters){
                         if(computerCenter.getName().contains(charString.toUpperCase())){
                             filteredList.add(computerCenter);
@@ -98,7 +98,7 @@ public class ComputerCenterAdapter extends RecyclerView.Adapter<ComputerCenterAd
 
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
-                filteredComputerCenters = (ArrayList<ComputerCenter>)results.values;
+                filteredComputerCenters = (List<ComputerCenter>)results.values;
                 notifyDataSetChanged();
             }
         };

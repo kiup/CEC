@@ -1,12 +1,7 @@
 package com.fmat.uady.cec.listComputerCenter;
 
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -18,20 +13,20 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.fmat.uady.cec.R;
-import com.fmat.uady.cec.model.Computer;
-import com.fmat.uady.cec.model.ComputerCenter;
-import com.fmat.uady.cec.model.ComputerData;
+import com.fmat.uady.cec.persistence.entities.Computer;
+import com.fmat.uady.cec.persistence.entities.ComputerCenter;
+import com.fmat.uady.cec.persistence.database.DataInitializer;
+import com.fmat.uady.cec.persistence.database.AppData;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ComputerCenterActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, NavigationView.OnNavigationItemSelectedListener{
     private RecyclerView recyclerView;
     private ComputerCenterAdapter adapter;
-    private ArrayList<ComputerCenter> computerCenters;
+    private List<ComputerCenter> computerCenters;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
@@ -70,8 +65,7 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
 
         //inicializa el adapter con los datos que se crearan
 
-
-        checkComputersOn();
+        loadData();
         adapter = new ComputerCenterAdapter(computerCenters, getApplicationContext());
 
 
@@ -80,15 +74,21 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
 
     }
 
-    private void checkComputersOn() {
-        ComputerData datos = new ComputerData();
+    private void loadData(){
 
-        computerCenters = datos.getComputerCenters();
+        computerCenters = AppData.getAppData(getApplicationContext()).computerCenterDao().getAll();
+        checkComputersOn();
+
+    }
+
+    private void checkComputersOn() {
+
         for(ComputerCenter computerCenter :computerCenters ){
-            ArrayList<Computer> computers = datos.getComputersByCenter(computerCenter.getName());
+            List<Computer> computers = AppData.getAppData(getApplicationContext()).computerDao().
+                    findByCenter(computerCenter.getName());
             for (Computer computer : computers ){
-                if(computer.isOn()){
-                    computerCenter.setOn(true);
+                if(computer.isTurnOn()){
+                    computerCenter.setTurnOn(true);
                     break;
                 }
             }

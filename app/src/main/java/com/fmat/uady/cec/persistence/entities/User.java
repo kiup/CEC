@@ -30,17 +30,23 @@ public class User {
     @ColumnInfo(name = "password")
     private String password;
 
+    @ColumnInfo(name = "role")
+    private String role;
+
     public User() {
     }
 
     @Ignore
-    public User(int idUser, String userName, String nombre, String email, String password) {
-        this.idUser = idUser;
+    public User(String userName, String nombre, String email, String password, String role) {
         this.userName = userName;
         this.nombre = nombre;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
+
+
+
 
     public int getIdUser() {
         return idUser;
@@ -80,5 +86,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

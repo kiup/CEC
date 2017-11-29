@@ -42,7 +42,7 @@ public class Action {
     }
 
     @Ignore
-    public Action(int idAction, String user, String computerCenter, int description, Date date, Date time) {
+    public Action(String user, String computerCenter, int description, Date date, Date time) {
         this.idAction = idAction;
         this.user = user;
         this.computerCenter = computerCenter;

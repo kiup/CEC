@@ -32,7 +32,7 @@ public interface UserDao {
     void insert(User user);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertActions(List<User> users);
+    void insertUsers(List<User> users);
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     void update(User user);

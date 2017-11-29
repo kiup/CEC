@@ -12,22 +12,21 @@ import android.widget.TextView;
 
 import com.fmat.uady.cec.R;
 import com.fmat.uady.cec.computerDetail.ComputerDetailActivity;
-import com.fmat.uady.cec.model.Computer;
-import com.fmat.uady.cec.model.ComputerCenter;
+import com.fmat.uady.cec.persistence.entities.Computer;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by noecutz on 25/11/17.
  */
 
 public class ComputerCenterDetailAdapter extends RecyclerView.Adapter<ComputerCenterDetailAdapter.ComputerViewHolder> {
-    private ArrayList<Computer> computers;
+    private List<Computer> computers;
     public static String NAME_COMPUTER = "com.fmat.uady.cec.computer.nameComputer";
     public static String NAME_CENTER = "com.fmat.uady.cec.computer.nameCenter";
     private Context context;
 
-    public ComputerCenterDetailAdapter(ArrayList<Computer> computers, Context context) {
+    public ComputerCenterDetailAdapter(List<Computer> computers, Context context) {
         this.computers = computers;
         this.context = context;
     }
@@ -41,7 +40,7 @@ public class ComputerCenterDetailAdapter extends RecyclerView.Adapter<ComputerCe
     @Override
     public void onBindViewHolder(ComputerViewHolder holder, final int position) {
         holder.name.setText(computers.get(position).getNameComputer());
-        if(computers.get(position).isOn()){
+        if(computers.get(position).isTurnOn()){
             holder.image.setImageResource(R.drawable.ic_computer_green_24dp);
         }else{
             holder.image.setImageResource(R.drawable.ic_computer_black_24dp);

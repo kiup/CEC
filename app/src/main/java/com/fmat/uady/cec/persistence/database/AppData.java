@@ -31,7 +31,7 @@ public abstract class AppData extends RoomDatabase {
 
     public static AppData getAppData(Context context){
         if(INSTANCE == null){
-            INSTANCE = Room.databaseBuilder(context, AppData.class, "CEC_FMAT").build();
+            INSTANCE = Room.databaseBuilder(context, AppData.class, "CEC_FMAT").allowMainThreadQueries().build();
         }
         return INSTANCE;
     }
