@@ -41,7 +41,11 @@ public class ComputerCenterDetailAdapter extends RecyclerView.Adapter<ComputerCe
     @Override
     public void onBindViewHolder(ComputerViewHolder holder, final int position) {
         holder.name.setText(computers.get(position).getNameComputer());
-
+        if(computers.get(position).isOn()){
+            holder.image.setImageResource(R.drawable.ic_computer_green_24dp);
+        }else{
+            holder.image.setImageResource(R.drawable.ic_computer_black_24dp);
+        }
         holder.computer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
