@@ -2,6 +2,7 @@ package com.fmat.uady.cec.history;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -29,7 +30,7 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_computer_center_detail);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_history);
         setSupportActionBar(toolbar);
 
 
@@ -37,12 +38,14 @@ public class HistoryActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+/*
         recyclerView = (RecyclerView) findViewById(R.id.list_history);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new HistoryAdapter(loadData());
         recyclerView.setAdapter(adapter);
-
+*/
 
     }
 

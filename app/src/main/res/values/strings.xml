@@ -27,6 +27,7 @@
     <string name="text_id_center_example">CC9</string>
     <string name="text_MACADDRESS">MACADDRESS:</string>
     <string name="text_MACADDRESS_example">FF:FF:FF:FF:FF:FF</string>
+    <string name="title_activity_profile">Perfil</string>
     <string name="title_activity_main">MainActivity</string>
 
     <string name="title_section1">Section 1</string>
@@ -41,5 +42,4 @@
     <string name="navigation_item_profile">Perfil</string>
     <string name="navigation_item_history">Historial</string>
     <string name="name_user">Nombre de usuario</string>
-
 </resources>

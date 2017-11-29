@@ -49,8 +49,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".history.HistoryActivity"
-            android:label="@string/title_activity_history"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_history"></activity>
+        <activity
+            android:name=".profile.ProfileActivity"
+            android:label="@string/title_activity_profile"></activity>
     </application>
 
 </manifest>
