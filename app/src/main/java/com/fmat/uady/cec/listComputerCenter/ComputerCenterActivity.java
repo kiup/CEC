@@ -28,10 +28,7 @@ import com.fmat.uady.cec.history.HistoryActivity;
 import com.fmat.uady.cec.model.Computer;
 import com.fmat.uady.cec.model.ComputerCenter;
 import com.fmat.uady.cec.model.ComputerData;
-<<<<<<< HEAD
-=======
 import com.fmat.uady.cec.model.History;
->>>>>>> dev_mika
 import com.fmat.uady.cec.profile.ProfileActivity;
 
 import java.util.ArrayList;
