@@ -44,6 +44,13 @@ public class ComputerCenterAdapter extends RecyclerView.Adapter<ComputerCenterAd
     @Override
     public void onBindViewHolder(ComputerCenterViewHolder holder, final int position) {
         holder.name.setText(filteredComputerCenters.get(position).getName());
+
+        if(filteredComputerCenters.get(position).getOn()){
+            holder.image.setImageResource(R.mipmap.ic_group_on);
+        }else{
+            holder.image.setImageResource(R.mipmap.ic_group_off);
+        }
+
         holder.center.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

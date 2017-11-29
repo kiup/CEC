@@ -70,20 +70,19 @@ public class ComputerDetailActivity extends AppCompatActivity {
     }
 
     public void loadButtons(){
-        if(computerCurrent.isState()){
+        if(computerCurrent.isOn()){
             buttonPower.setImageResource(R.mipmap.ic_on);
         }
         buttonPower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(computerCurrent.isState()){
+                if(computerCurrent.isOn()){
                     Toast.makeText(ComputerDetailActivity.this,"APAGATE SESAMO!",Toast.LENGTH_SHORT).show();
-                    computerCurrent.setState(false);
+                    computerCurrent.setOn(false);
                     buttonPower.setImageResource(R.mipmap.ic_off);
                 }else{
-                    computerCurrent.setState(true);
-                    String message = WakeOnLan.wol(computerCurrent.getIp(), computerCurrent.getMacAddress());
-                    Toast.makeText(ComputerDetailActivity.this,message,Toast.LENGTH_LONG).show();
+                    Toast.makeText(ComputerDetailActivity.this,"LEVANTATE!",Toast.LENGTH_SHORT).show();
+                    computerCurrent.setOn(true);
                     buttonPower.setImageResource(R.mipmap.ic_on);
                 }
 
