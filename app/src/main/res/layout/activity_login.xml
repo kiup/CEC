@@ -24,7 +24,7 @@
         android:id="@+id/img_logo"
         android:layout_width="246dp"
         android:layout_height="153dp"
-        android:src="@mipmap/ic_login"
+        android:src="@mipmap/ic_logo_app"
         tools:ignore="ContentDescription" />
 
     <ScrollView

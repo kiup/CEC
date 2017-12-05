@@ -75,11 +75,12 @@
     <ImageView
         android:id="@+id/button_power"
         android:layout_centerHorizontal="true"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
         android:layout_marginTop="360dp"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
         android:contentDescription="button power"
-        android:src="@mipmap/ic_off" />
+        android:src="@drawable/ic_power_button_on" />
 
 </RelativeLayout>

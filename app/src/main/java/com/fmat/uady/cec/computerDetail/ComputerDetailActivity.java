@@ -71,7 +71,7 @@ public class ComputerDetailActivity extends AppCompatActivity {
 
     public void loadButtons(){
         if(computerCurrent.isOn()){
-            buttonPower.setImageResource(R.mipmap.ic_on);
+            buttonPower.setImageResource(R.drawable.ic_power_button_off);
         }
         buttonPower.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,11 +79,11 @@ public class ComputerDetailActivity extends AppCompatActivity {
                 if(computerCurrent.isOn()){
                     Toast.makeText(ComputerDetailActivity.this,"APAGATE SESAMO!",Toast.LENGTH_SHORT).show();
                     computerCurrent.setOn(false);
-                    buttonPower.setImageResource(R.mipmap.ic_off);
+                    buttonPower.setImageResource(R.drawable.ic_power_button_on);
                 }else{
                     Toast.makeText(ComputerDetailActivity.this,"LEVANTATE!",Toast.LENGTH_SHORT).show();
                     computerCurrent.setOn(true);
-                    buttonPower.setImageResource(R.mipmap.ic_on);
+                    buttonPower.setImageResource(R.drawable.ic_power_button_off);
                 }
 
             }

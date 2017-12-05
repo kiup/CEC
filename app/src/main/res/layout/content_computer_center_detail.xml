@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,10 +11,21 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list_computer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="350dp"
         android:layout_marginTop="30dp"
         android:scrollbars="vertical">
 
     </android.support.v7.widget.RecyclerView>
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/button_power"
+        android:layout_centerHorizontal="true"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="30dp"
+        android:contentDescription="button power"
+        android:src="@drawable/ic_power_button_off" />
+
+
+</android.support.design.widget.CoordinatorLayout>
