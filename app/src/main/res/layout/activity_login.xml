@@ -80,10 +80,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="#ce940e"
                 android:backgroundTint="#00264e"
                 android:text="@string/action_sign_in"
-                android:textColor="#ce940e"
+                android:textColor="@color/windowBackground"
                 android:textStyle="bold"
                 tools:text="@string/action_sign_in" />
 
