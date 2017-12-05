@@ -3,8 +3,9 @@
     <color name="colorPrimary">#00264e</color>
     <color name="colorPrimaryDark">#7a7a7a</color>
     <color name="colorAccent">#ce940e</color>
-    <color name="windowBackground">#d6d6d6</color>
+    <color name="windowBackground">#fafafa</color>
     <color name="navigationBarColor">#00264e</color>
     <color name="textColorPrimary">#ffffff</color>
     <color name="textColorContent">#000</color>
+    <color name="colorMenu">#f0f0f0</color>
 </resources>

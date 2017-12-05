@@ -24,7 +24,7 @@
         android:id="@+id/img_logo"
         android:layout_width="246dp"
         android:layout_height="153dp"
-        android:src="@mipmap/ic_login"
+        android:src="@mipmap/ic_logo_app"
         tools:ignore="ContentDescription" />
 
     <ScrollView
@@ -47,7 +47,7 @@
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#ce940e"
+                    android:backgroundTint="@color/colorPrimaryDark"
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/textColorContent"
@@ -63,7 +63,7 @@
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#ce940e"
+                    android:backgroundTint="@color/colorPrimaryDark"
                     android:hint="@string/prompt_password"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
@@ -80,10 +80,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="#ce940e"
                 android:backgroundTint="#00264e"
                 android:text="@string/action_sign_in"
-                android:textColor="#ce940e"
+                android:textColor="@color/windowBackground"
                 android:textStyle="bold"
                 tools:text="@string/action_sign_in" />
 

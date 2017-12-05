@@ -74,7 +74,7 @@ public class ComputerDetailActivity extends AppCompatActivity {
 
     public void loadButtons(){
         if(computerCurrent.isOn()){
-            buttonPower.setImageResource(R.mipmap.ic_on);
+            buttonPower.setImageResource(R.drawable.ic_power_button_off);
         }
         buttonPower.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,11 +82,11 @@ public class ComputerDetailActivity extends AppCompatActivity {
                 if(computerCurrent.isOn()){
                     ComputerDetailActivity.this.service.turnOff(computerCurrent.getNameComputer());
                     computerCurrent.setOn(false);
-                    buttonPower.setImageResource(R.mipmap.ic_off);
+                    buttonPower.setImageResource(R.drawable.ic_power_button_on);
                 }else{
                     ComputerDetailActivity.this.service.turnOn(computerCurrent.getNameComputer());
                     computerCurrent.setOn(true);
-                    buttonPower.setImageResource(R.mipmap.ic_on);
+                    buttonPower.setImageResource(R.drawable.ic_power_button_off);
                 }
 
             }
