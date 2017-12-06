@@ -58,8 +58,6 @@ public class ComputerDetailActivity extends AppCompatActivity {
         tcomputer.setText(computerCurrent.getNameComputer());
         this.tcenter = (TextView) findViewById(R.id.id_center);
         tcenter.setText(computerCurrent.getIdComputerCenter());
-        this.tmacaddress = (TextView) findViewById(R.id.macaddress);
-        tmacaddress.setText(computerCurrent.getMacAddress());
     }
 
     public void getComputer(){
