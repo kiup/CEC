@@ -1,5 +1,6 @@
 package com.fmat.uady.cec.computerCenterDetail;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
@@ -49,11 +50,35 @@ public class ComputerCenterDetailAdapter extends RecyclerView.Adapter<ComputerCe
         holder.computer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent computerDetail = new Intent(context, ComputerDetailActivity.class);
+                Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.content_computer_detail);
+                dialog.setTitle("This is my custom dialog box");
+                dialog.setCancelable(true);
+                //there are a lot of settings, for dialog, check them all out!
+
+                //set up text
+                /*TextView text = (TextView) dialog.findViewById(R.id.TextView01);
+                text.setText(R.string.lots_of_text);
+
+                //set up image view
+                ImageView img = (ImageView) dialog.findViewById(R.id.ImageView01);
+                img.setImageResource(R.drawable.nista_logo);
+
+                //set up button
+                Button button = (Button) dialog.findViewById(R.id.Button01);
+                button.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });*/
+                //now that the dialog is set up, it's time to show it
+                dialog.show();
+                /*Intent computerDetail = new Intent(context, ComputerDetailActivity.class);
                 computerDetail.putExtra(NAME_COMPUTER, computers.get(position).getNameComputer());
                 computerDetail.putExtra(NAME_CENTER, computers.get(position).getIdComputerCenter());
                 computerDetail.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(computerDetail);
+                context.startActivity(computerDetail);*/
             }
         });
 
