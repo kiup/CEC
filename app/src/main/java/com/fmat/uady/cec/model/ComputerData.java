@@ -19,14 +19,10 @@ public class ComputerData {
     }
 
     public void initComputers(){
-        computers.add(new Computer("CC1", "A1", "AC:D1:B8:EA:64:91", "192.168.228.120",false));
-        computers.add(new Computer("CC1", "A2", "FG:12:34:45:12", "",false));
-        computers.add(new Computer("CC1", "A3", "FG:12:34:45:12", "",false));
-        computers.add(new Computer("CC1", "A4", "FG:12:34:45:12", "",true));
-        computers.add(new Computer("CC1", "A5", "FG:12:34:45:12", "",false));
-        computers.add(new Computer("CC1", "B1", "FG:12:34:45:12", "",true));
-        computers.add(new Computer("CC1", "B2", "FG:12:34:45:12", "",false));
-        computers.add(new Computer("CC1", "B3", "FG:12:34:45:12", "",false));
+        computers.add(new Computer("CC8", "A1", "00:1C:7B:AA:0F:C4", "",true));
+        computers.add(new Computer("CC8", "A2", "FG:12:34:45:12:59", "",true));
+        computers.add(new Computer("CC8", "A3", "FG:12:34:45:12:76", "",true));
+        computers.add(new Computer("CC8", "A4", "30:14:4A:54:99:9D", "",true));
     }
 
     public void initComputerCenter(){
@@ -36,6 +32,8 @@ public class ComputerData {
         computerCenters.add(new ComputerCenter("CC4"));
         computerCenters.add(new ComputerCenter("CC5"));
         computerCenters.add(new ComputerCenter("CC6"));
+        computerCenters.add(new ComputerCenter("CC7"));
+        computerCenters.add(new ComputerCenter("CC8"));
     }
 
     public ArrayList<Computer> getComputers(){
