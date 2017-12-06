@@ -37,5 +37,6 @@
     <string name="action_example">Example action</string>
     <string name="navigation_item_profile">Perfil</string>
     <string name="navigation_item_history">Historial</string>
-    <string name="name_user">Nombre de usuario</string>
+    <string name="name_user">John Doe</string>
+    <string name="name_email">johndoe@example.com</string>
 </resources>

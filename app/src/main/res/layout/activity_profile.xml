@@ -23,10 +23,11 @@
     <ImageView
         android:id="@+id/profilePicture"
         android:layout_width="100dp"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/appBarLayout"
         android:layout_centerHorizontal="true"
-        android:src="@mipmap/ic_launcher_round" />
+        android:background="@drawable/border_perfil"
+        android:src="@drawable/ic_man_user_white" />
 
     <TextView
         android:id="@+id/nameText"
