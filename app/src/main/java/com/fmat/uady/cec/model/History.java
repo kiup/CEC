@@ -1,5 +1,6 @@
 package com.fmat.uady.cec.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -66,8 +67,8 @@ public class History {
 
     @Override
     public String toString() {
-        String idate = date.getDate()+"/"+date.getMonth()+"/"+date.getYear();
-        return  userName + " el "+ idate +
+        SimpleDateFormat fdate = new SimpleDateFormat("dd-mm-yyyy");
+        return  userName + " el "+ fdate.format(date) +
                 " realizo " + action + " en " +
                 idCenter + " de " + idComputer;
     }

@@ -44,7 +44,7 @@ public class ComputerCenterDetailActivity extends AppCompatActivity {
         GridLayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 5);
         recyclerView.setLayoutManager(layoutManager);
 
-        ComputerData datos = new ComputerData();
+        ComputerData datos = ComputerData.getInstance();
 
         ArrayList<Computer> computers = datos.getComputersByCenter(nameCenter);
 
@@ -53,6 +53,15 @@ public class ComputerCenterDetailActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ComputerData datos = ComputerData.getInstance();
+        ArrayList<Computer> computers = datos.getComputersByCenter(nameCenter);
+        adapter.setComputers(computers);
+        adapter.notifyDataSetChanged();
     }
 
     @Override

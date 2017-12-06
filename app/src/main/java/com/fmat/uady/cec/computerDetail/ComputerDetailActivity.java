@@ -24,7 +24,6 @@ public class ComputerDetailActivity extends AppCompatActivity {
     private Computer computerCurrent;
     private ImageView buttonPower;
     private TextView tcomputer;
-    private TextView tmacaddress;
     private TextView tcenter;
     private Service service;
 
@@ -59,9 +58,14 @@ public class ComputerDetailActivity extends AppCompatActivity {
         this.tcenter = (TextView) findViewById(R.id.id_center);
         tcenter.setText(computerCurrent.getIdComputerCenter());
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        getComputer();
+    }
 
     public void getComputer(){
-        ComputerData datos = new ComputerData();
+        ComputerData datos = ComputerData.getInstance();
         List<Computer> computers = datos.getComputersByCenter(nameCenter);
         for (Computer icomputer: computers){
             if (icomputer.getNameComputer().equals(nameComputer)){
@@ -80,10 +84,12 @@ public class ComputerDetailActivity extends AppCompatActivity {
                 if(computerCurrent.isOn()){
                     ComputerDetailActivity.this.service.turnOff(computerCurrent.getNameComputer());
                     computerCurrent.setOn(false);
+                    ComputerData.getInstance().updateComputer(computerCurrent);
                     buttonPower.setImageResource(R.drawable.ic_power_button_on);
                 }else{
                     ComputerDetailActivity.this.service.turnOn(computerCurrent.getNameComputer());
                     computerCurrent.setOn(true);
+                    ComputerData.getInstance().updateComputer(computerCurrent);
                     buttonPower.setImageResource(R.drawable.ic_power_button_off);
                 }
 

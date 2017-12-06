@@ -10,8 +10,18 @@ public class ComputerData {
 
     private ArrayList<Computer> computers;
     private ArrayList<ComputerCenter> computerCenters;
+    private static ComputerData computerData;
 
-    public ComputerData() {
+    public static ComputerData getInstance(){
+        if(computerData == null){
+            computerData = new ComputerData();
+        }
+
+        return computerData;
+    }
+
+
+    private ComputerData() {
         computers = new ArrayList<>();
         computerCenters = new ArrayList<>();
         initComputerCenter();
@@ -53,5 +63,13 @@ public class ComputerData {
         }
 
         return filteredComputers;
+    }
+
+    public void updateComputer(Computer ocomputer){
+        for (Computer computer: computers) {
+            if(computer.getNameComputer().equals(ocomputer.getNameComputer())){
+                computer = ocomputer;
+            }
+        }
     }
 }

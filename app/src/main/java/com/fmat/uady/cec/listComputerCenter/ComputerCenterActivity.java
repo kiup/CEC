@@ -86,7 +86,7 @@ public class ComputerCenterActivity extends AppCompatActivity implements SearchV
     }
 
     private void checkComputersOn() {
-        ComputerData datos = new ComputerData();
+        ComputerData datos = ComputerData.getInstance();
 
         computerCenters = datos.getComputerCenters();
         for(ComputerCenter computerCenter :computerCenters ){

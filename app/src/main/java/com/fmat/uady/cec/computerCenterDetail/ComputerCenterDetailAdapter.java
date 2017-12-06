@@ -60,6 +60,10 @@ public class ComputerCenterDetailAdapter extends RecyclerView.Adapter<ComputerCe
 
     }
 
+    public void setComputers(ArrayList<Computer> computers){
+        this.computers = computers;
+    }
+
     @Override
     public int getItemCount() {
         return computers.size();
