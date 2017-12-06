@@ -66,7 +66,8 @@ public class History {
 
     @Override
     public String toString() {
-        return  userName + " el "+ date +
+        String idate = date.getDate()+"/"+date.getMonth()+"/"+date.getYear();
+        return  userName + " el "+ idate +
                 " realizo " + action + " en " +
                 idCenter + " de " + idComputer;
     }
