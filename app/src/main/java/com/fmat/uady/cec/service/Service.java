@@ -28,7 +28,7 @@ public class Service {
     //Puerto
     private static final int SERVERPORT = 5000;
     //direccion servidor
-    private static final String ADDRESS = "192.168.227.43";
+    private static final String ADDRESS = "172.20.10.3";
 
 
     public Service(Context context){
